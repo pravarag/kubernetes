@@ -59,8 +59,8 @@ func (pl *InterPodAffinity) Name() string {
 // failed by this plugin schedulable
 func (pl *InterPodAffinity) EventsToRegister() []framework.ClusterEvent {
 	return []framework.ClusterEvent{
-		{Resource: framework.Pod, ActionType: framework.Delete},
-		{Resource: framework.Node, ActionType: framework.Add | framework.UpdateNodeAllocatable},
+		{Resource: framework.Pod, ActionType: framework.All},
+		{Resource: framework.Node, ActionType: framework.Add | framework.UpdateNodeLabel},
 	}
 }
 
